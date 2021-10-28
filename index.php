@@ -5,6 +5,7 @@ $emptyEmail = '';
 $emailError = '';
 $emailalredyExist = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     if (empty($_POST["email"])) {
         $emptyEmail = "<div class='error'>Email is mandatory</div>";
     } else {
