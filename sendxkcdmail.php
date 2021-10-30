@@ -1,4 +1,5 @@
 <?php
+include __DIR__ . "\config.php";
 function sendXKCD($to, $img, $title)
 {
 
@@ -9,16 +10,16 @@ function sendXKCD($to, $img, $title)
     }
 
     $url = 'https://api.sendgrid.com/';
-    $sendgrid_apikey = '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';
+    $sendgrid_apikey = getenv('SEND_GRID_API');
     $filename = 'image.png';
     $filePath = $img;
-    $body = "<img src='" . $img . "'> <br> <a href='" . $protocol . "://" . $_SERVER['HTTP_HOST'] . "/rtcamp-assignment/unsub.php?email=" . $to . "'>Click Here to Unsub</a>";
+    $body = "<center><img src='" . $img . "'> <br> <a href='" . $protocol . "://" . $_SERVER['HTTP_HOST'] . "/rtcamp-assignment/unsub.php?email=" . $to . "'>Click Here to Unsub</a></center>";
     $params = array(
         'to' => $to,
         'toname' => 'sup',
         'subject' => 'XKCD Random comic',
         'html' => $body,
-        'from' => 'hadeskerbecs455@gmail.com',
+        'from' => getenv('FROM'),
         'fromname' => 'XKCD',
         'files[' . $filename . ']' => file_get_contents($filePath),
         'type' => 'image/png',

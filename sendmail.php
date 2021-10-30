@@ -1,15 +1,17 @@
 <?php
+include __DIR__ . "\config.php";
 function sendmail($to, $sendbody)
 {
+
     $url = 'https://api.sendgrid.com/';
-    $sendgrid_apikey = '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';
+    $sendgrid_apikey = getenv('SEND_GRID_API');
     $body = $sendbody;
     $params = array(
         'to' => $to,
         'toname' => 'sup',
         'subject' => 'XKCD Random comic',
         'html' => $body,
-        'from' => 'hadeskerbecs455@gmail.com',
+        'from' => getenv('FROM'),
         'fromname' => 'XKCD',
     );
 
