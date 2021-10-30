@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "\db.php";
+include __DIR__ . "/db.php";
 if (isset($_GET['email'])) {
     $email = $_GET['email'];
     $inactive = 0;

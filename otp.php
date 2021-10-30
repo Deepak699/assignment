@@ -1,6 +1,6 @@
 <?php
 session_start();
-include __DIR__ . '\sendmail.php';
+include __DIR__ . '/sendmail.php';
 $email = $_SESSION['email'];
 $digits = 5;
 $otp = rand(pow(10, $digits - 1), pow(10, $digits) - 1);

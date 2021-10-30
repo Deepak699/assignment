@@ -1,5 +1,5 @@
 <?php session_start();
-include __DIR__ . "\db.php";
+include __DIR__ . "/db.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo $_POST['otp'];
     $inp = $_POST['otp'];
