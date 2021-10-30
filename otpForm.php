@@ -1,5 +1,5 @@
 <?php session_start();
-include "db.php";
+include __DIR__ . "\db.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo $_POST['otp'];
     $inp = $_POST['otp'];
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "invalid otp";
     }
 }?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,5 +29,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="submit">Submit</button>
     </form>
 </body>
+</html> -->
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+
+<form class="form" action="" method="post" >
+  <h2>Enter OTP</h2>
+  <p type="OTP:"><input type="number" name="otp"></input></p>
+  <button type="submit" name="submit">Verify OTP</button>
+</form>
+</body>
 </html>
- <?php
