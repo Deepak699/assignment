@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $emailalredyExist = "<div class='error'>email address already exists</div>";
             } else {
                 $_SESSION['email'] = $email;
+                $_SESSION['active'] = 1;
                 header('Location:otp.php');
             }
         }

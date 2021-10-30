@@ -4,11 +4,14 @@ include __DIR__ . '/sendmail.php';
 $email = $_SESSION['email'];
 $digits = 5;
 $otp = rand(pow(10, $digits - 1), pow(10, $digits) - 1);
-
-sendmail($email, $otp);
-
 $_SESSION['otp'] = $otp;
-header('Location:otpForm.php');
+sendmail($email, $otp);
+if (isset($_SESSION['active'])) {
+    header('Location:otpForm.php');
+} else {
+    header('Location:index.php');
+}
+
 // $to_email = $email;
 // $subject = "OTP Verification";
 // $body = "<div>$otp</div>";
