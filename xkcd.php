@@ -1,6 +1,6 @@
 <?php
-include __DIR__ . "\db.php";
-include __DIR__ . "\sendxkcdmail.php";
+include __DIR__ . "/db.php";
+include __DIR__ . "/sendxkcdmail.php";
 $ch = curl_init();
 $rand_no = rand(10, 500);
 $url = "https://xkcd.com/$rand_no/info.0.json";
