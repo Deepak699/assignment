@@ -1,7 +1,6 @@
 <?php
 session_start();
 include __DIR__ . "\db.php";
-include __DIR__ . "\config.php";
 $emptyEmail = '';
 $emailError = '';
 $emailalredyExist = '';

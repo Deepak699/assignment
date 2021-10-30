@@ -1,5 +1,4 @@
 <?php
-include __DIR__ . "\config.php";
 function sendXKCD($to, $img, $title)
 {
 
