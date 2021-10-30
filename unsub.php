@@ -10,8 +10,8 @@ if (isset($_GET['email'])) {
     $res = $stmt1->get_result();
     $data = $res->fetch_assoc();
     if ($data['is_active'] == 1) {
-        $stmt = $conn->prepare("UPDATE email SET is_active=? WHERE email=?");
-        $stmt->bind_param('bs', $inactive, $email);
+        $stmt = $conn->prepare("UPDATE email SET is_active='$inactive' WHERE email=?");
+        $stmt->bind_param('s', $email);
         $stmt->execute();
         ?>
     <!DOCTYPE html>
