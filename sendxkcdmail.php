@@ -12,7 +12,7 @@ function sendXKCD($to, $img, $title)
     $sendgrid_apikey = getenv('SEND_GRID_API');
     $filename = 'image.png';
     $filePath = $img;
-    $body = "<center><img src='" . $img . "'> <br> <a href='" . $protocol . "://" . $_SERVER['HTTP_HOST'] . "/rtcamp-assignment/unsub.php?email=" . $to . "'>Click Here to Unsub</a></center>";
+    $body = "<center><img src='" . $img . "'> <br> <a href='" . $protocol . "://" . $_SERVER['HTTP_HOST'] . "/unsub.php?email=" . $to . "'>Click Here to Unsub</a></center>";
     $params = array(
         'to' => $to,
         'toname' => 'sup',
